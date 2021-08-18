@@ -1,0 +1,7 @@
+com\mph\controller\UserRestController.class
+com\mph\service\UserServiceImpl.class
+com\mph\dao\UserDao.class
+com\mph\dao\UserDaoImpl.class
+com\mph\entity\User.class
+com\mph\service\UserService.class
+com\mph\controller\UserController.class
