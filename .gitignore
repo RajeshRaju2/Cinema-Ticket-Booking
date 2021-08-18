@@ -1,7 +1,3 @@
-.settings/
-target/
-.classpath
-.project
 
 
 # Compiled class file
@@ -28,10 +24,5 @@ target/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-<<<<<<< HEAD:.gitignore
-rll/.settings/
-rll/target/
-rll/.classpath
-rll/.project
-=======
+
 >>>>>>> f934fe44cc1a7e959eafe54b2e9e5d013706d7a9:rll/.gitignore
