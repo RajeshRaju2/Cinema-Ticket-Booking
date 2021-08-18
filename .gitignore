@@ -23,6 +23,7 @@ rll/.project
 *.zip
 *.tar.gz
 *.rar
+<<<<<<< HEAD
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -73,3 +74,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+=======
+<<<<<<< HEAD
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.settings/
+target/
+.classpath
+.project
+=======
+>>>>>>> 30573583d02182f53f7a6a19f03fd3088ad2efbd
+>>>>>>> 4405c1b2570a3168015ec759846796238913a79b
