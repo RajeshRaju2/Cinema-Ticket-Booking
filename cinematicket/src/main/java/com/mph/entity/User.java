@@ -1,10 +1,12 @@
 package com.mph.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,13 +28,17 @@ private String email;
 private String password;
 	@Column
 private int phone;
+	
+
 
 public User() {
 	super();
 	// TODO Auto-generated constructor stub
 }
 
-public User(int userId,String fname, String lname, String gender, String email, String password, int phone) {
+
+public User(int userId, String fname, String lname, String gender, String email, String password, int phone,
+		Ticket ticket) {
 	super();
 	this.userId = userId;
 	this.fname = fname;
@@ -41,7 +47,9 @@ public User(int userId,String fname, String lname, String gender, String email, 
 	this.email = email;
 	this.password = password;
 	this.phone = phone;
+	
 }
+
 
 public int getUserId() {
 	return userId;
@@ -104,6 +112,7 @@ public String toString() {
 	return "User [userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", gender=" + gender + ", email="
 			+ email + ", password=" + password + ", phone=" + phone + "]";
 }
+
 
 
 

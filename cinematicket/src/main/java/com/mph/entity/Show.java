@@ -10,19 +10,23 @@ private int showId;
 private int startTime;
 private int endTime;
 private String language;
-private Ticket ticket;
+
 public Show() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Show(int showId, int startTime, int endTime, String language, Ticket ticket) {
+
+
+public Show(int showId, int startTime, int endTime, String language, Ticket ticket, Movie movie) {
 	super();
 	this.showId = showId;
 	this.startTime = startTime;
 	this.endTime = endTime;
 	this.language = language;
-	this.ticket = ticket;
+	
 }
+
+
 public int getShowId() {
 	return showId;
 }
@@ -47,17 +51,12 @@ public String getLanguage() {
 public void setLanguage(String language) {
 	this.language = language;
 }
-public Ticket getTicket() {
-	return ticket;
-}
-public void setTicket(Ticket ticket) {
-	this.ticket = ticket;
-}
+
 @Override
 public String toString() {
-	return "Show [showId=" + showId + ", startTime=" + startTime + ", endTime=" + endTime + ", language=" + language
-			+ ", ticket=" + ticket + "]";
+	return "Show [showId=" + showId + ", startTime=" + startTime + ", endTime=" + endTime + ", language=" + language + "]";
 }
+
 
 
 

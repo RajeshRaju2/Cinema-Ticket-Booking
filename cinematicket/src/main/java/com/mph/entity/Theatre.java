@@ -5,24 +5,28 @@ import javax.persistence.Id;
 
 @Entity
 public class Theatre {
-	
+@Id
 private int theaterId;
 private String theaterName;
 private String location;
-private Seat seat;
+
 
 public Theatre() {
 	super();
 	// TODO Auto-generated constructor stub
 }
 
-public Theatre(int theaterId, String theaterName, String location, Seat seat) {
+
+
+public Theatre(int theaterId, String theaterName, String location, Seat seat, Ticket ticket) {
 	super();
 	this.theaterId = theaterId;
 	this.theaterName = theaterName;
 	this.location = location;
-	this.seat = seat;
+
 }
+
+
 
 public int getTheaterId() {
 	return theaterId;
@@ -48,19 +52,11 @@ public void setLocation(String location) {
 	this.location = location;
 }
 
-public Seat getSeat() {
-	return seat;
-}
-
-public void setSeat(Seat seat) {
-	this.seat = seat;
-}
-
 @Override
 public String toString() {
-	return "Theatre [theaterId=" + theaterId + ", theaterName=" + theaterName + ", location=" + location + ", seat="
-			+ seat + "]";
+	return "Theatre [theaterId=" + theaterId + ", theaterName=" + theaterName + ", location=" + location +  "]";
 }
+
 
 
 

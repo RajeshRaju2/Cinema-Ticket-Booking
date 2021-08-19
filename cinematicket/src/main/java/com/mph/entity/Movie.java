@@ -9,7 +9,7 @@ public class Movie{
 @Id
 private int movieId;
 private String movieName;
-private Show show;
+
 
 public Movie() {
 	super();
@@ -19,7 +19,7 @@ public Movie(int movieId, String movieName, Show show) {
 	super();
 	this.movieId = movieId;
 	this.movieName = movieName;
-	this.show = show;
+	
 }
 public int getMovieId() {
 	return movieId;
@@ -33,15 +33,10 @@ public String getMovieName() {
 public void setMovieName(String movieName) {
 	this.movieName = movieName;
 }
-public Show getShow() {
-	return show;
-}
-public void setShow(Show show) {
-	this.show = show;
-}
+
 @Override
 public String toString() {
-	return "Movie [movieId=" + movieId + ", movieName=" + movieName + ", show=" + show + "]";
+	return "Movie [movieId=" + movieId + ", movieName=" + movieName +  "]";
 }
 
 

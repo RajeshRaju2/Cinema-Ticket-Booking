@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mph.entity.User;
 import com.mph.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:4200",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RestController
+@CrossOrigin(origins = "http://localhost:4200",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping("/user")
 public class UserRestController {
 

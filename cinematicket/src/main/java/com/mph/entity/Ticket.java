@@ -7,6 +7,7 @@ import javax.persistence.Id;
 public class Ticket {
 @Id
 private int ticketNumber;
+private String TheatreName;
 private int price;
 private int seatNumber;
 private String showDate;
@@ -19,14 +20,37 @@ public Ticket() {
 }
 
 
-public Ticket(int ticketNumber, int price, int seatNumber, String showDate, int showId) {
+
+
+
+public Ticket(int ticketNumber, String theatreName, int price, int seatNumber, String showDate, int showId) {
 	super();
 	this.ticketNumber = ticketNumber;
+	TheatreName = theatreName;
 	this.price = price;
 	this.seatNumber = seatNumber;
 	this.showDate = showDate;
 	this.showId = showId;
 }
+
+
+
+
+
+public String getTheatreName() {
+	return TheatreName;
+}
+
+
+
+
+
+public void setTheatreName(String theatreName) {
+	TheatreName = theatreName;
+}
+
+
+
 
 
 public int getTicketNumber() {
