@@ -42,6 +42,10 @@ public void setNo_of_seats(int no_of_seats) {
 public String toString() {
 	return "Seat [seatId=" + seatId + ", seatName=" + seatName + ", no_of_seats=" + no_of_seats + "]";
 }
+public Seat uniqueResult() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 
 }

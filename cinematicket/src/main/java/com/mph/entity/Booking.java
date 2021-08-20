@@ -114,6 +114,15 @@ public class Booking {
 	}
 
 
+
+
+
+	public Booking uniqueResult() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 	
 	

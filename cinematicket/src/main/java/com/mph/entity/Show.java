@@ -59,6 +59,12 @@ public String toString() {
 }
 
 
+public Show uniqueResult() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
 
 
 }

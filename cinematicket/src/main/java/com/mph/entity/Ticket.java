@@ -97,4 +97,13 @@ public String toString() {
 
 
 
+
+
+public Ticket uniqueResult() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+
 }

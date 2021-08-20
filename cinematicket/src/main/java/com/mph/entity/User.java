@@ -1,25 +1,25 @@
 package com.mph.entity;
 
-import javax.persistence.CascadeType;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
 
 @Entity
-@Table(name="users")
+//@Table(lastName="users")
 public class User {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 private int userId;
 	@Column
-private String fname;
+private String firstName;
 	@Column
-private String lname;
+private String lastName;
 	@Column
 private String gender;
 	@Column
@@ -37,12 +37,12 @@ public User() {
 }
 
 
-public User(int userId, String fname, String lname, String gender, String email, String password, int phone,
+public User(int userId, String firstName, String lastName, String gender, String email, String password, int phone,
 		Ticket ticket) {
 	super();
 	this.userId = userId;
-	this.fname = fname;
-	this.lname = lname;
+	this.firstName= firstName;
+	this.lastName = lastName;
 	this.gender = gender;
 	this.email = email;
 	this.password = password;
@@ -59,20 +59,20 @@ public void setUserId(int userId) {
 	this.userId = userId;
 }
 
-public String getFname() {
-	return fname;
+public String getFirstName() {
+	return firstName;
 }
 
-public void setFname(String fname) {
-	this.fname = fname;
+public void setFirstName(String firstName) {
+	this.firstName= firstName;
 }
 
-public String getLname() {
-	return lname;
+public String getlastName() {
+	return lastName;
 }
 
-public void setLname(String lname) {
-	this.lname = lname;
+public void setlastName(String lastName) {
+	this.lastName = lastName;
 }
 
 public String getGender() {
@@ -109,7 +109,7 @@ public void setPhone(int phone) {
 
 @Override
 public String toString() {
-	return "User [userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", gender=" + gender + ", email="
+	return "User [userId=" + userId + ", firstlastName=" + firstName+ ", lastName=" + lastName + ", gender=" + gender + ", email="
 			+ email + ", password=" + password + ", phone=" + phone + "]";
 }
 

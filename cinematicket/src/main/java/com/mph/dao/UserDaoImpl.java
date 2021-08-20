@@ -57,8 +57,8 @@ public class UserDaoImpl implements UserDao{
 	public List<User> updateUser(User user) {
 		
 		Query query = getSession().createQuery("update User user set fname=:fname,lname=:lname,gender=:gender,phone=:phone where userId =:eno");
-		query.setParameter("fname", user.getFname());
-		query.setParameter("lname",user.getLname());
+		query.setParameter("fname", user.getFirstName());
+		query.setParameter("lname",user.getlastName());
 		query.setParameter("gender",user.getGender());
 		query.setParameter("phone", user.getPhone());
 		query.setParameter("eno",user.getUserId());

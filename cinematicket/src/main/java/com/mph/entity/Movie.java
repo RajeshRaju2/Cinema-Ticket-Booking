@@ -38,6 +38,10 @@ public void setMovieName(String movieName) {
 public String toString() {
 	return "Movie [movieId=" + movieId + ", movieName=" + movieName +  "]";
 }
+public Movie uniqueResult() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 
 }
