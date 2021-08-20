@@ -71,14 +71,14 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
-	public List<User> deleteUser(int uid) {
+	public List<User> deleteUser(int userId) {
 
-		Query query = getSession().createQuery("delete from User user where userId=:uid");
-		query.setParameter("uid", uid);
-		int noofrows = query.executeUpdate();
-		if(noofrows >0)
+		Query query = getSession().createQuery("delete from User user where userId=:userId");
+		query.setParameter("userId", userId);
+		int no_ofRows = query.executeUpdate();
+		if(no_ofRows >0)
 		{
-			System.out.println("Deleted " + noofrows + " rows");
+			System.out.println("Deleted " + no_ofRows + " rows");
 		}
 		return getAllUser();
 		
@@ -86,10 +86,10 @@ public class UserDaoImpl implements UserDao{
 	
 
 	@Override
-	public User getUserById(int uid) {
+	public User getUserById(int userId) {
 
 		Criteria c = getSession().createCriteria(User.class);
-		c.add(Restrictions.eq("userId", uid));
+		c.add(Restrictions.eq("userId", userId));
 		User user = (User)c.uniqueResult();
 		System.out.println("User Found : " + user);
 		return user;

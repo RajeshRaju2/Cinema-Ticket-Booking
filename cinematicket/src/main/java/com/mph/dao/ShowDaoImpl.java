@@ -4,31 +4,31 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.mph.entity.Movie;
+import com.mph.entity.Show;
 
 @Repository
-public class MovieDaoImpl implements MovieDao {
+public class ShowDaoImpl implements ShowDao {
 
 	@Override
-	public void addMovie(Movie movie) {
+	public void addShow(Show show) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Movie> deleteMovie(int movieId) {
+	public List<Show> deleteShow(int showId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Movie getMovieById(int movieId) {
+	public Show getShowById(int showId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Movie> updatemovie(Movie movie) {
+	public List<Show> updateShow(Show show) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -6,37 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mph.dao.MovieDao;
-import com.mph.entity.Movie;
+import com.mph.dao.ShowDao;
+import com.mph.entity.Show;
+
 @Transactional
 @Service
-public class MovieServiceImpl implements MovieService {
+public class ShowServiceImpl implements ShowService {
 	
 	@Autowired
-	MovieDao movieDao;
+	ShowDao showDao;
 	
 	@Override
-	public void addmovie(Movie movie) {
+	public void addShow(Show show) {
 		// TODO Auto-generated method stub
-		movieDao.addMovie(movie);
+		showDao.addShow(show);
+		
 	}
 
 	@Override
-	public List<Movie> deleteMovie(int movieId) {
+	public List<Show> deleteShow(int showId) {
 		// TODO Auto-generated method stub
-		return movieDao.deleteMovie(movieId);
+		return showDao.deleteShow(showId);
 	}
 
 	@Override
-	public Movie getMovieById(int movieId) {
+	public Show getShowById(int showId) {
 		// TODO Auto-generated method stub
-		return movieDao.getMovieById( movieId);
+		return showDao.getShowById(showId);
 	}
 
 	@Override
-	public List<Movie> updatemovie(Movie movie) {
+	public List<Show> updateShow(Show show) {
 		// TODO Auto-generated method stub
-		return movieDao.updatemovie(movie);
+		return showDao.updateShow(show);
 	}
 
 }

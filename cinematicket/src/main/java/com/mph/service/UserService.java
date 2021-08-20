@@ -13,7 +13,7 @@ public interface UserService {
 	public List<User> getAllUser();
 	public User validateUser(User user);
 	public List<User> updateUser(User user);
-	public List<User> deleteUser(int uid);
+	public List<User> deleteUser(int userid);
 	
-	public User getUserById(int uid);
+	public User getUserById(int userid);
 }

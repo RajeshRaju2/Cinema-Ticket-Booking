@@ -7,5 +7,9 @@ import com.mph.entity.Movie;
 public interface MovieDao {
 	public void addMovie(Movie movie);
 
-	public List<Movie> deleteMovie(int movieid);
+	public List<Movie> deleteMovie(int movieId);
+
+	public Movie getMovieById(int movieId);
+
+	public List<Movie> updatemovie(Movie movie);
 }

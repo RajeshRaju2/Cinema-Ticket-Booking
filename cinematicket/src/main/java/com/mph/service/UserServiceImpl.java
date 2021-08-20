@@ -43,15 +43,15 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> deleteUser(int uid) {
+	public List<User> deleteUser(int userid) {
 		
-		return userDao.deleteUser(uid);
+		return userDao.deleteUser(userid);
 	}
 
 	@Override
-	public User getUserById(int uid) {
+	public User getUserById(int userid) {
 		
-		return userDao.getUserById(uid);
+		return userDao.getUserById(userid);
 	}
 
 
