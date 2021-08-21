@@ -35,7 +35,7 @@ public class MovieDaoImpl implements MovieDao {
 	@Override
 	public List<Movie> deleteMovie(int movieId) {
 		// TODO Auto-generated method stub
-		Query query = getSession().createQuery("delete from movie movie where bookingId=:bookingId");
+		Query query = getSession().createQuery("delete from Movie where movieId=:movieId");
 		query.setParameter("movieId", movieId);
 		int noofrows = query.executeUpdate();
 		if(noofrows >0)
@@ -43,14 +43,14 @@ public class MovieDaoImpl implements MovieDao {
 			System.out.println("Deleted " + noofrows + " rows");
 		}
 		
-		return deleteMovie(noofrows);
+		return getAllMovie();
 	}
 
 	@Override
 	public Movie getMovieById(int movieId) {
 
 		Criteria c = getSession().createCriteria (Movie.class); 
-		c.add(Restrictions.eq("bookingId",movieId)); 
+		c.add(Restrictions.eq("movieId",movieId)); 
 		Movie m= (Movie)c.uniqueResult(); 
 		System.out.println("Employee Retrieved" + m);
 		return m;
@@ -58,7 +58,7 @@ public class MovieDaoImpl implements MovieDao {
 
 	@Override
 	public List<Movie> updatemovie(Movie movie) {
-		Query query = getSession().createQuery("update Movie movie set movieId=:movieId,movieName=:movieName");
+		Query query = getSession().createQuery("update Movie set movieId=:movieId,movieName=:movieName");
 		query.setParameter("movieId", movie.getMovieId());
 		query.setParameter("movieName",movie.getMovieName());
 		

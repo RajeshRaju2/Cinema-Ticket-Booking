@@ -15,7 +15,7 @@ public Movie() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Movie(int movieId, String movieName, Show show) {
+public Movie(int movieId, String movieName) {
 	super();
 	this.movieId = movieId;
 	this.movieName = movieName;
