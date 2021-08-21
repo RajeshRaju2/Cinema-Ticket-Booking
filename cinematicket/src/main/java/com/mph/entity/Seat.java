@@ -2,6 +2,8 @@ package com.mph.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Seat {
@@ -9,6 +11,12 @@ public class Seat {
 private int seatId;
 private String seatName;
 private int no_of_seats;
+
+@ManyToOne
+@JoinColumn(name="bookingId")
+private Booking booking; 
+
+
 
 public Seat(int seatId, String seatName, int no_of_seats) {
 	super();

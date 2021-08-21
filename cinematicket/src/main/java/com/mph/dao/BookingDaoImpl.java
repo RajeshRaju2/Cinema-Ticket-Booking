@@ -61,10 +61,9 @@ public class BookingDaoImpl implements BookingDao {
 		// TODO Auto-generated method stub
 		Query query = getSession().createQuery("update Booking booking set bookingId=:bookingId,movieId=:movieId,no_ofSeatsSelected=:no_ofSeatsSelected,showTime=:showTime,amount=:amount, where bookingId=:bookingId");
 		query.setParameter("bookingId", booking.getBookingId());
-		query.setParameter("MovieId",booking.getMovieId());
-		query.setParameter("no_ofSeatsSelected",booking.getNo_ofSeatsSelected());
-		query.setParameter("showTime", booking.getShowTime());
-		query.setParameter("showdate",booking.getShowDate());
+	
+		query.setParameter("no_ofSeatsSelected",booking.getNo_ofseatNameSelected());
+		
 		query.setParameter("amount",booking.getAmount());
 		int noofrows = query.executeUpdate();
 		if(noofrows >0)

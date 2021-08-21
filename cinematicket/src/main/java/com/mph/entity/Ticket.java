@@ -1,12 +1,15 @@
 package com.mph.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
 
 @Entity
 public class Ticket {
 @Id
-private int ticketNumber;
+@Column(name="ticket_id")
+private int ticketId;
 private int price;
 private int seatNumber;
 private String showDate;
@@ -22,9 +25,9 @@ public Ticket() {
 
 
 
-public Ticket(int ticketNumber, String theatreName, int price, int seatNumber, String showDate, int showId) {
+public Ticket(int ticketId, String theatreName, int price, int seatNumber, String showDate, int showId) {
 	super();
-	this.ticketNumber = ticketNumber;
+	this.ticketId = ticketId;
 	
 	this.price = price;
 	this.seatNumber = seatNumber;
@@ -39,13 +42,13 @@ public Ticket(int ticketNumber, String theatreName, int price, int seatNumber, S
 
 
 
-public int getTicketNumber() {
-	return ticketNumber;
+public int getticketId() {
+	return ticketId;
 }
 
 
-public void setTicketNumber(int ticketNumber) {
-	this.ticketNumber = ticketNumber;
+public void setticketId(int ticketId) {
+	this.ticketId = ticketId;
 }
 
 
@@ -91,7 +94,7 @@ public void setShowId(int showId) {
 
 @Override
 public String toString() {
-	return "Ticket [ticketNumber=" + ticketNumber + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate="
+	return "Ticket [ticketId=" + ticketId + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate="
 			+ showDate + ", showId=" + showId + "]";
 }
 

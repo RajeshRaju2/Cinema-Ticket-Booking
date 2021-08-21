@@ -2,7 +2,9 @@ package com.mph.entity;
 
 import javax.persistence.Entity;
 
+
 import javax.persistence.Id;
+
 
 @Entity
 public class Show {
@@ -11,6 +13,7 @@ private int showId;
 private int startTime;
 private int endTime;
 private String language;
+
 
 public Show() {
 	super();

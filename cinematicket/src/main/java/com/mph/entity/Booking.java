@@ -1,17 +1,29 @@
 package com.mph.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name="Booking1")
 public class Booking {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bookingId;
-	private int movieId;
-	private int no_ofSeatsSelected;
-	private String showTime;
-	private String showDate;
-	private String amount;
+	private int no_ofseatNameSelected;
+
+	private int amount;
+	
+	
+	
+	@OneToMany(mappedBy="booking") 
+	private List<Seat> seat;
 	
 	
 	public Booking() {
@@ -21,6 +33,22 @@ public class Booking {
 	
 	
 	
+
+
+
+
+	public Booking(int bookingId, int no_ofseatNameSelected, int amount, List<Seat> seat) {
+		super();
+		this.bookingId = bookingId;
+		this.no_ofseatNameSelected = no_ofseatNameSelected;
+		this.setAmount(amount);
+		this.seat = seat;
+	}
+
+
+
+
+
 
 
 	public int getBookingId() {
@@ -38,70 +66,36 @@ public class Booking {
 
 
 
+	public int getNo_ofseatNameSelected() {
+		return no_ofseatNameSelected;
+	}
 
-	public Booking(int bookingId, int movieId, int no_ofSeatsSelected, String showTime, String showDate,
-			String amount) {
-		super();
-		this.bookingId = bookingId;
-		this.movieId = movieId;
-		this.no_ofSeatsSelected = no_ofSeatsSelected;
-		this.showTime = showTime;
-		this.showDate = showDate;
-		this.amount = amount;
+
+	public void setNo_ofseatNameSelected(int no_ofseatNameSelected) {
+		this.no_ofseatNameSelected = no_ofseatNameSelected;
 	}
 
 
 
 
 
-	public int getMovieId() {
-		return movieId;
-	}
 
 
-	public void setMovieId(int movieId) {
-		this.movieId = movieId;
-	}
-
-
-	public int getNo_ofSeatsSelected() {
-		return no_ofSeatsSelected;
-	}
-
-
-	public void setNo_ofSeatsSelected(int no_ofSeatsSelected) {
-		this.no_ofSeatsSelected = no_ofSeatsSelected;
-	}
-
-
-	public String getShowTime() {
-		return showTime;
-	}
-
-
-	public void setShowTime(String showTime) {
-		this.showTime = showTime;
-	}
-
-
-	public String getShowDate() {
-		return showDate;
-	}
-
-
-	public void setShowDate(String showDate) {
-		this.showDate = showDate;
-	}
-
-
-	public String getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 
 
-	public void setAmount(String amount) {
+
+
+
+
+
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+
+
 
 
 
@@ -109,18 +103,23 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", movieId=" + movieId + ", no_ofSeatsSelected=" + no_ofSeatsSelected
-				+ ", showTime=" + showTime + ", showDate=" + showDate + ", amount=" + amount + "]";
+		return "Booking [bookingId=" + bookingId + ", no_ofseatNameSelected=" + no_ofseatNameSelected + ", amount="
+				+ amount + ", seat=" + seat + "]";
 	}
 
 
 
 
 
-	public Booking uniqueResult() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
+	
+
+
+
+
+
+
 
 
 	

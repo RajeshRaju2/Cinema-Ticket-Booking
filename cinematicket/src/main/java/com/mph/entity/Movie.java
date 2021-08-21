@@ -1,13 +1,18 @@
 package com.mph.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="MOVIE")
 public class Movie{
 @Id
+@GeneratedValue
 private int movieId;
+@Column(name="MOVIE_NAME")
 private String movieName;
 
 
