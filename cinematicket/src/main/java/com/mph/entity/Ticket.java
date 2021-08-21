@@ -1,12 +1,14 @@
 package com.mph.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Ticket {
 @Id
-private int ticketNumber;
+@Column(name="ticket_id") 
+private int ticketId;
 private int price;
 private int seatNumber;
 private String showDate;
@@ -18,36 +20,22 @@ public Ticket() {
 	// TODO Auto-generated constructor stub
 }
 
-
-
-
-
-public Ticket(int ticketNumber, String theatreName, int price, int seatNumber, String showDate, int showId) {
+public Ticket(int ticketId, int price, int seatNumber, String showDate, int showId) {
 	super();
-	this.ticketNumber = ticketNumber;
-	
+	this.ticketId = ticketId;
 	this.price = price;
 	this.seatNumber = seatNumber;
 	this.showDate = showDate;
 	this.showId = showId;
 }
 
-
-
-
-
-
-
-
-public int getTicketNumber() {
-	return ticketNumber;
+public int getTicketId() {
+	return ticketId;
 }
 
-
-public void setTicketNumber(int ticketNumber) {
-	this.ticketNumber = ticketNumber;
+public void setTicketId(int ticketId) {
+	this.ticketId = ticketId;
 }
-
 
 public int getPrice() {
 	return price;
@@ -91,17 +79,8 @@ public void setShowId(int showId) {
 
 @Override
 public String toString() {
-	return "Ticket [ticketNumber=" + ticketNumber + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate="
-			+ showDate + ", showId=" + showId + "]";
-}
-
-
-
-
-
-public Ticket uniqueResult() {
-	// TODO Auto-generated method stub
-	return null;
+	return "Ticket [ticketId=" + ticketId + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate=" + showDate
+			+ ", showId=" + showId + "]";
 }
 
 
