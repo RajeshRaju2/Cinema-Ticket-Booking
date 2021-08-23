@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mph.entity.Booking;
 import com.mph.entity.Seat;
 import com.mph.service.SeatService;
 
@@ -26,10 +27,20 @@ public class SeatRestController {
 	
 	@Autowired
 	SeatService SeatService;
+	@Autowired
+	Booking booking;
 	
+	public  void get(Booking booking) {
+		this.booking=booking;
+	}
+	
+	
+
 	@PostMapping("/Seat")
 	public  Seat setSeat(@RequestBody Seat seat){
+		seat.setBooking(booking);
 		SeatService.addSeat(seat);
+		
 		return seat;
 
 	}

@@ -27,9 +27,12 @@ public class BookingRestController {
 		
 	@Autowired
 	BookingService bookingService;
+	@Autowired
+	SeatRestController seatRestController;
 	
 	@PostMapping("/booking")
 	public  Booking setbooking(@RequestBody Booking booking){
+		seatRestController.get(booking);
 		bookingService.addBooking(booking);
 		return booking;
 
