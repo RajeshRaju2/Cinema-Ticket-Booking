@@ -2,6 +2,7 @@ package com.mph.entity;
 
 import java.util.List;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Seat {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int seatId;
 private String seatName;
-private int no_of_seats;
+
 
 @OneToOne(mappedBy="Booking") 
 private List<Seat> seat;
@@ -51,15 +52,10 @@ public String getSeatName() {
 public void setSeatName(String seatName) {
 	this.seatName = seatName;
 }
-public int getNo_of_seats() {
-	return no_of_seats;
-}
-public void setNo_of_seats(int no_of_seats) {
-	this.no_of_seats = no_of_seats;
-}
+
 @Override
 public String toString() {
-	return "Seat [seatId=" + seatId + ", seatName=" + seatName + ", no_of_seats=" + no_of_seats + "]";
+	return "Seat [seatId=" + seatId + ", seatName=" + seatName + "]";
 }
 public Seat uniqueResult() {
 	// TODO Auto-generated method stub
