@@ -1,18 +1,26 @@
 package com.mph.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import java.util.List;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+
 @Entity
+@Table(name="Ticket_Table")
 public class Ticket {
 @Id
-<<<<<<< HEAD
-@Column(name="ticket_id")
-=======
-@Column(name="ticket_id") 
->>>>>>> 7d68b2ff521421d3991210e75cabbbdd7e41af8e
+@GeneratedValue(strategy = GenerationType.AUTO)
+
+//@Column(name="ticket_id")
+
 private int ticketId;
 private int price;
 private int seatNumber;
@@ -20,12 +28,17 @@ private String showDate;
 private int showId;
 
 
+
+@OneToOne(mappedBy="booking") 
+private List<Seat> seat;
+
+
 public Ticket() {
 	super();
 	// TODO Auto-generated constructor stub
 }
 
-<<<<<<< HEAD
+
 
 
 
@@ -34,18 +47,18 @@ public Ticket(int ticketId, String theatreName, int price, int seatNumber, Strin
 	super();
 	this.ticketId = ticketId;
 	
-=======
+}
 public Ticket(int ticketId, int price, int seatNumber, String showDate, int showId) {
 	super();
 	this.ticketId = ticketId;
->>>>>>> 7d68b2ff521421d3991210e75cabbbdd7e41af8e
+
 	this.price = price;
 	this.seatNumber = seatNumber;
 	this.showDate = showDate;
 	this.showId = showId;
 }
 
-<<<<<<< HEAD
+
 
 
 
@@ -59,13 +72,14 @@ public int getticketId() {
 
 
 public void setticketId(int ticketId) {
-=======
+return;
+}
+	
 public int getTicketId() {
 	return ticketId;
 }
 
 public void setTicketId(int ticketId) {
->>>>>>> 7d68b2ff521421d3991210e75cabbbdd7e41af8e
 	this.ticketId = ticketId;
 }
 
@@ -111,7 +125,7 @@ public void setShowId(int showId) {
 
 @Override
 public String toString() {
-<<<<<<< HEAD
+
 	return "Ticket [ticketId=" + ticketId + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate="
 			+ showDate + ", showId=" + showId + "]";
 }
@@ -120,13 +134,13 @@ public String toString() {
 
 
 
-public Ticket uniqueResult() {
+public String uniqueResult() {
 	// TODO Auto-generated method stub
-	return null;
-=======
+	
+
 	return "Ticket [ticketId=" + ticketId + ", price=" + price + ", seatNumber=" + seatNumber + ", showDate=" + showDate
 			+ ", showId=" + showId + "]";
->>>>>>> 7d68b2ff521421d3991210e75cabbbdd7e41af8e
+
 }
 
 

@@ -65,11 +65,11 @@ public class TicketDaoImpl implements TicketDao {
 	@Override
 	public List<Ticket> updateTicket(Ticket ticket) {
 		Query query = getSession().createQuery("update Ticket set ticketId=:ticketId,price=:price,seatNumber=:seatNumber,showDate=:showDate,showId=:showId");
-<<<<<<< HEAD
+
 		query.setParameter("ticketId", ticket.getticketId());
-=======
+
 		query.setParameter("ticketId", ticket.getTicketId());
->>>>>>> 7d68b2ff521421d3991210e75cabbbdd7e41af8e
+
 		query.setParameter("price",ticket.getPrice());
 		query.setParameter("seatNumber",ticket.getSeatNumber());
 		query.setParameter("showDate",ticket.getShowDate());

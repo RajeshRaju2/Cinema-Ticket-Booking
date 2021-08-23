@@ -1,18 +1,29 @@
 package com.mph.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Seat_Table")
 public class Seat {
 @Id	
+@GeneratedValue(strategy = GenerationType.AUTO)
 private int seatId;
 private String seatName;
 private int no_of_seats;
 
-@ManyToOne
+@OneToOne(mappedBy="Booking") 
+private List<Seat> seat;
+
 @JoinColumn(name="bookingId")
 private Booking booking; 
 
