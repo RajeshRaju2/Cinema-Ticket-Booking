@@ -2,7 +2,6 @@ package com.mph.entity;
 
 import java.util.List;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,11 +29,10 @@ private Booking booking;
 
 
 
-public Seat(int seatId, String seatName, int no_of_seats) {
+public Seat(int seatId, String seatName) {
 	super();
 	this.seatId = seatId;
 	this.seatName = seatName;
-	this.no_of_seats = no_of_seats;
 }
 public Seat() {
 	super();
