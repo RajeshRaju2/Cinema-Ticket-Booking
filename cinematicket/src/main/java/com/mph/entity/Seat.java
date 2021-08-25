@@ -2,6 +2,7 @@ package com.mph.entity;
 
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -9,11 +10,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Seat_Table9")
+@Table(name="SEAT_TABLE")
 public class Seat {
 	@Id	
 
+	
+	
+	@Column(name="SEAT_ID")
 	private int seatId;
+	@Column(name="SEAT_NAME")
 	private String seatName;
 
 	@ManyToOne

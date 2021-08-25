@@ -61,10 +61,14 @@ public class BookingDaoImpl implements BookingDao {
 	@Override
 	public List<Booking> updateBooking(Booking booking) {
 		// TODO Auto-generated method stub
-		Query query = getSession().createQuery("update Booking booking set bookingId=:bookingId,movieId=:movieId,no_ofSeatsSelected=:no_ofSeatsSelected,showTime=:showTime,amount=:amount, where bookingId=:bookingId");
+		Query query = getSession().createQuery("update Booking booking set bookingId=:bookingId,movieName=:movieName,language=:language,showDate=:showDate,startTime=:startTime, no_ofseatNameSelected=:no_ofseatNameSelected,amount =:amount");
 		query.setParameter("bookingId", booking.getBookingId());
-	
-		query.setParameter("no_ofSeatsSelected",booking.getNo_ofseatNameSelected());
+		query.setParameter("movieName", booking.getMovieName());
+		query.setParameter("language", booking.getLanguage());
+		query.setParameter("showDate", booking.getShowDate());
+		query.setParameter("startTime", booking.getStartTime());
+		
+		query.setParameter("no_ofseatNameSelected",booking.getNo_ofseatNameSelected());
 		
 		query.setParameter("amount",booking.getAmount());
 		int noofrows = query.executeUpdate();
