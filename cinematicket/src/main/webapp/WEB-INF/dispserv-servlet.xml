@@ -37,6 +37,7 @@
 				<value>com.mph.entity.Booking</value>
 				<value>com.mph.entity.Seat</value>
 				<value>com.mph.entity.User</value>
+				<value>com.mph.entity.Admin</value>
 				<!--  <value>com.mph.entity.Movie</value>
 				<value>com.mph.entity.Seat</value>
 				<value>com.mph.entity.Show</value>
@@ -79,11 +80,14 @@
 	<bean id="user" class="com.mph.entity.User"/>
 	<bean id="seat" class="com.mph.entity.Seat"/>
 	<bean id="booking" class="com.mph.entity.Booking"/>
+		<bean id="admin" class="com.mph.entity.Admin"/>
 	<bean id="userDaoImpl" class="com.mph.dao.UserDaoImpl"/>
 	<bean id="seatDaoImpl" class="com.mph.dao.SeatDaoImpl"/>
 	<bean id="bookingDaoImpl" class="com.mph.dao.BookingDaoImpl"/>
+		<bean id="adminDaoImpl" class="com.mph.dao.AdminDaoImpl"/>
 	<bean id="userServiceImpl" class="com.mph.service.UserServiceImpl"/>
 	<bean id="seatServiceImpl" class="com.mph.service.SeatServiceImpl"/>
 	<bean id="bookingServiceImpl" class="com.mph.service.BookingServiceImpl"/>
+		<bean id="adminServiceImpl" class="com.mph.service.AdminServiceImpl"/>
 	
 </beans>
