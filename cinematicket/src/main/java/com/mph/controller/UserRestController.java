@@ -2,8 +2,6 @@ package com.mph.controller;
 
 import java.util.List;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mph.entity.User;
 import com.mph.service.UserService;
 
-@RestController
 @CrossOrigin(origins = "http://localhost:4200",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
+@RestController
 @RequestMapping("/user")
 public class UserRestController {
 
@@ -86,6 +84,19 @@ public  ResponseEntity<User> searchUser(@PathVariable("uid") int userid){
 		return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
 	}
 	return new ResponseEntity<User>(userById,HttpStatus.OK);
+}
+	
+	@GetMapping("/validateUser/{email}/{password}")
+public  ResponseEntity<User> validateUser(@PathVariable("email") String email,@PathVariable("password") String password){
+	User result = userService.validateUser(email,password);
+	System.out.println("From Rest allemp: " + result);
+	
+	if(result == null)
+	{
+		return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
+	}
+	return new ResponseEntity<User>(result,HttpStatus.OK);
+
 }
 }
 

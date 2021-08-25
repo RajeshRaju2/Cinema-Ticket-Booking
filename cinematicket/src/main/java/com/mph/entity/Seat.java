@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,20 +20,17 @@ public class Seat {
 	@JoinColumn(name="bookingId")
 	private Booking booking; 
 
-	@OneToOne(mappedBy="seat")
-	private Ticket ticket;
 
 	public Seat() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Seat(int seatId, String seatName, Booking booking, Ticket ticket) {
+	public Seat(int seatId, String seatName, Booking booking) {
 		super();
 		this.seatId = seatId;
 		this.seatName = seatName;
 		this.booking = booking;
-		this.ticket = ticket;
 	}
 
 	public int getSeatId() {
@@ -61,18 +57,10 @@ public class Seat {
 		this.booking = booking;
 	}
 
-	public Ticket getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(Ticket ticket) {
-		this.ticket = ticket;
-	}
 
 	@Override
 	public String toString() {
-		return "Seat [seatId=" + seatId + ", seatName=" + seatName + ", booking=" + booking + ", ticket=" + ticket
-				+ "]";
+		return "Seat [seatId=" + seatId + ", seatName=" + seatName + ", booking=" + booking + "]";
 	}
 	
 	

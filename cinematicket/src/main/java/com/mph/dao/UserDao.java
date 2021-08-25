@@ -8,7 +8,7 @@ import com.mph.entity.User;
 public interface UserDao {
 	public void addUser(User user);
 	public List<User> getAllUser();
-	public User validateUser(User user);
+	public User validateUser(String email,String password);
 	public List<User> updateUser(User user);
 	public List<User> deleteUser(int uid);
 	

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mph.entity.Booking;
 import com.mph.entity.Seat;
-import com.mph.entity.Ticket;
 import com.mph.service.SeatService;
 
 @CrossOrigin(origins = "http://localhost:4200",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
@@ -30,10 +29,7 @@ public class SeatRestController {
 	SeatService SeatService;
 	@Autowired
 	Booking booking;
-	@Autowired
-	Ticket ticket;
-	@Autowired
-	TicketRestController ticketRestController;
+
 	
 	public void getBooking(Booking booking) {
 		this.booking=booking;

@@ -2,8 +2,6 @@ package com.mph.dao;
 
 import java.util.List;
 
-
-
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -43,22 +41,23 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
-	public User validateUser(User user) {
+	public User validateUser(String email,String password) {
+		
 		
 		Criteria c = getSession().createCriteria(User.class);
-		c.add(Restrictions.eq("email", user.getEmail()));
-		c.add(Restrictions.eq("password", user.getPassword()));
+        c.add(Restrictions.eq("email",email));
+        c.add(Restrictions.eq("password",password));
 		User uniqueUser = (User)c.uniqueResult();
-		System.out.println("User Retrieved : " + uniqueUser);
 		return uniqueUser;
+		
 	}
 
 	@Override
 	public List<User> updateUser(User user) {
 		
 		Query query = getSession().createQuery("update User user set fname=:fname,lname=:lname,gender=:gender,phone=:phone where userId =:eno");
-		query.setParameter("fname", user.getFirstName());
-		query.setParameter("lname",user.getlastName());
+		query.setParameter("fname", user.getFname());
+		query.setParameter("lname",user.getLname());
 		query.setParameter("gender",user.getGender());
 		query.setParameter("phone", user.getPhone());
 		query.setParameter("eno",user.getUserId());
@@ -71,14 +70,14 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
-	public List<User> deleteUser(int userId) {
+	public List<User> deleteUser(int uid) {
 
-		Query query = getSession().createQuery("delete from User user where userId=:userId");
-		query.setParameter("userId", userId);
-		int no_ofRows = query.executeUpdate();
-		if(no_ofRows >0)
+		Query query = getSession().createQuery("delete from User user where userId=:uid");
+		query.setParameter("uid", uid);
+		int noofrows = query.executeUpdate();
+		if(noofrows >0)
 		{
-			System.out.println("Deleted " + no_ofRows + " rows");
+			System.out.println("Deleted " + noofrows + " rows");
 		}
 		return getAllUser();
 		
@@ -86,10 +85,10 @@ public class UserDaoImpl implements UserDao{
 	
 
 	@Override
-	public User getUserById(int userId) {
+	public User getUserById(int uid) {
 
 		Criteria c = getSession().createCriteria(User.class);
-		c.add(Restrictions.eq("userId", userId));
+		c.add(Restrictions.eq("userId", uid));
 		User user = (User)c.uniqueResult();
 		System.out.println("User Found : " + user);
 		return user;

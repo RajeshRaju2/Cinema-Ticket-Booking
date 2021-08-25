@@ -9,4 +9,5 @@ public interface BookingDao {
 	public List<Booking> deleteBooking(int bookingId);
 	public Booking getBookingById(int bookingId);
 	public List<Booking> updateBooking(Booking booking);
+	public List<Booking> getAllBooking();
 }

@@ -40,4 +40,10 @@ public class BookingServiceImpl implements BookingService {
 		return bookingDao.updateBooking(booking);
 	}
 
+	@Override
+	public List<Booking> getAllBooking() {
+		// TODO Auto-generated method stub
+		return bookingDao.getAllBooking();
+	}
+
 }

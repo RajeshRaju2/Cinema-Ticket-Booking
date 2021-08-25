@@ -34,7 +34,6 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.mph.entity.Booking</value>
-				<value>com.mph.entity.Ticket</value>
 				<value>com.mph.entity.Seat</value>
 				<value>com.mph.entity.User</value>
 				<!--  <value>com.mph.entity.Movie</value>
@@ -77,15 +76,12 @@
 	<bean id="bookingServiceImpl" class="com.mph.service.BookingServiceImpl"/>-->
 			
 	<bean id="user" class="com.mph.entity.User"/>
-	<bean id="ticket" class="com.mph.entity.Ticket"/>
 	<bean id="seat" class="com.mph.entity.Seat"/>
 	<bean id="booking" class="com.mph.entity.Booking"/>
 	<bean id="userDaoImpl" class="com.mph.dao.UserDaoImpl"/>
-	<bean id="ticketDaoImpl" class="com.mph.dao.TicketDaoImpl"/>
 	<bean id="seatDaoImpl" class="com.mph.dao.SeatDaoImpl"/>
 	<bean id="bookingDaoImpl" class="com.mph.dao.BookingDaoImpl"/>
 	<bean id="userServiceImpl" class="com.mph.service.UserServiceImpl"/>
-	<bean id="ticketServiceImpl" class="com.mph.service.TicketServiceImpl"/>
 	<bean id="seatServiceImpl" class="com.mph.service.SeatServiceImpl"/>
 	<bean id="bookingServiceImpl" class="com.mph.service.BookingServiceImpl"/>
 	

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mph.entity.Booking;
+import com.mph.entity.User;
 import com.mph.service.BookingService;
 
 @CrossOrigin(origins = "http://localhost:4200",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
@@ -29,13 +30,11 @@ public class BookingRestController {
 	BookingService bookingService;
 	@Autowired
 	SeatRestController seatRestController;
-	@Autowired
-	TicketRestController ticketRestController;
+
 	
-	@PostMapping("/booking")
+	@PostMapping("/setbooking")
 	public  Booking setbooking(@RequestBody Booking booking){
 		seatRestController.getBooking(booking);
-		//ticketRestController.getBooking(booking);
 		bookingService.addBooking(booking);
 		return booking;
 	}
@@ -75,4 +74,16 @@ public class BookingRestController {
 		}
 		return new ResponseEntity<Booking>(bookingById,HttpStatus.OK);
 	}
+	
+	@GetMapping("/allBookings")
+public  ResponseEntity<List<Booking>> allBookings(){
+	List<Booking> bookingList = bookingService.getAllBooking();
+	System.out.println("From Rest allemp: " + bookingList);
+	
+	if(bookingList.isEmpty())
+	{
+		return new ResponseEntity<List<Booking>>(HttpStatus.NO_CONTENT);
+	}
+	return new ResponseEntity<List<Booking>>(bookingList,HttpStatus.OK);
+}
 }

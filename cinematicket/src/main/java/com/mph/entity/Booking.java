@@ -4,6 +4,8 @@ import java.util.List;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -13,19 +15,20 @@ import javax.persistence.Table;
 @Table(name="Booking_Table9")
 public class Booking {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bookingId;
-	private int no_ofseatNameSelected;
 	private String movieName;
-	private String startTime;
 	private String language;
-	private int amount;
 	private String showDate;
+	private String startTime;
+	private int no_ofseatNameSelected;
+	private int amount;
+	
 	
 	@OneToMany(mappedBy="booking") 
 	private List<Seat> seat;
 
-	@OneToMany(mappedBy="booking") 
-	private List<Ticket> ticket;
+
 
 	public Booking() {
 		super();
@@ -34,7 +37,7 @@ public class Booking {
 
 		
 	public Booking(int bookingId, int no_ofseatNameSelected, String movieName, String startTime, String language,
-			int amount, String showDate, List<Seat> seat, List<Ticket> ticket) {
+			int amount, String showDate, List<Seat> seat) {
 		super();
 		this.bookingId = bookingId;
 		this.no_ofseatNameSelected = no_ofseatNameSelected;
@@ -44,7 +47,6 @@ public class Booking {
 		this.amount = amount;
 		this.showDate = showDate;
 		this.seat = seat;
-		this.ticket = ticket;
 	}
 
 
@@ -104,27 +106,20 @@ public class Booking {
 		this.amount = amount;
 	}
 
-	public List<Seat> getSeat() {
-		return seat;
-	}
+//	public List<Seat> getSeat() {
+//		return seat;
+//	}
 
-	public void setSeat(List<Seat> seat) {
-		this.seat = seat;
-	}
+//	public void setSeat(List<Seat> seat) {
+//		this.seat = seat;
+//	}
 
-	public List<Ticket> getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(List<Ticket> ticket) {
-		this.ticket = ticket;
-	}
 
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", no_ofseatNameSelected=" + no_ofseatNameSelected + ", movieName="
 				+ movieName + ", startTime=" + startTime + ", language=" + language + ", amount=" + amount
-				+ ", showDate=" + showDate + ", seat=" + seat + ", ticket=" + ticket + "]";
+				+ ", showDate=" + showDate + "]";
 	}
 		
 }

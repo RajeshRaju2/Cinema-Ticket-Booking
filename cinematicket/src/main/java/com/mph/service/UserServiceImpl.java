@@ -2,7 +2,6 @@ package com.mph.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +30,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User validateUser(User user) {
+	public User validateUser(String email,String password) {
 		
-		return userDao.validateUser(user);
+		return userDao.validateUser(email, password);
 	}
 
 	@Override
@@ -43,15 +42,15 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> deleteUser(int userid) {
+	public List<User> deleteUser(int uid) {
 		
-		return userDao.deleteUser(userid);
+		return userDao.deleteUser(uid);
 	}
 
 	@Override
-	public User getUserById(int userid) {
+	public User getUserById(int uid) {
 		
-		return userDao.getUserById(userid);
+		return userDao.getUserById(uid);
 	}
 
 

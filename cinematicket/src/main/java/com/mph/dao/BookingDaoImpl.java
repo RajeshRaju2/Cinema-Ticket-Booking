@@ -75,7 +75,7 @@ public class BookingDaoImpl implements BookingDao {
 		return getAllBooking();
 	}
 
-	private List<Booking> getAllBooking() {
+	public List<Booking> getAllBooking() {
 		// TODO Auto-generated method stub
 		Query query = getSession().createQuery("from Booking booking");
 		@SuppressWarnings("unchecked")
