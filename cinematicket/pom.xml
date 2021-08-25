@@ -3,7 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mph</groupId>
+<<<<<<< HEAD
 	<artifactId>rll</artifactId>
+=======
+	<artifactId>springmvcproj</artifactId>
+>>>>>>> 82f1eba8ffd54ec884d823c97ace8f6f02676870
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rll Maven Webapp</name>
