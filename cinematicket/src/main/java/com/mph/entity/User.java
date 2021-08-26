@@ -1,7 +1,7 @@
 package com.mph.entity;
 
 /**
- * @author Rishabh
+ * @author Rakesh
  *
  */
 import javax.persistence.Column;
