@@ -1,5 +1,9 @@
 package com.mph.exception;
 
+/**
+ * @author Rajesh
+ *
+ */
 public class DataNotFoundException extends RuntimeException {
 
 	/**

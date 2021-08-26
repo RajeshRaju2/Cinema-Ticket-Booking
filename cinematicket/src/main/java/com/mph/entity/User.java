@@ -1,5 +1,9 @@
 package com.mph.entity;
 
+/**
+ * @author Rishabh
+ *
+ */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,5 +1,9 @@
 package com.mph.exception;
 
+/**
+ * @author Rajesh
+ *
+ */
 public class DataAlreadyExistsException extends RuntimeException {
 
 

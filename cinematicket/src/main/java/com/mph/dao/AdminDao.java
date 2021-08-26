@@ -1,5 +1,9 @@
 package com.mph.dao;
 
+/**
+ * @author Prajjawal 
+ *
+ */
 import java.util.List;
 
 import com.mph.entity.Admin;
