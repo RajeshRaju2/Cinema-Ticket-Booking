@@ -2,21 +2,33 @@ package com.mph.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="ADMIN_TABLE")
 public class Admin {
+	
 	@Id
 	@Column(name="MOVIE_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int movieId;
+	
 	@Column(name="MOVIE_NAME")
 	private String movieName;
+	
 	@Column(name="LANGUAGE")
 	private String language;
+	
 	@Column(name="AMOUNT")
 	private int amount;
+	
 	@Column(name="DESCRIPTION")
 	private String description;
+	
+	
 	public int getMovieId() {
 		return movieId;
 	}

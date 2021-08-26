@@ -2,23 +2,39 @@ package com.mph.entity;
 
 import java.util.List;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Booking_Table")
+@Table(name="BOOKING_TABLE")
 public class Booking {
 	@Id
+	@Column(name="BOOKING_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bookingId;
+	
+	@Column(name="NO_OF_SEATS_SELECTED")
 	private int no_ofseatNameSelected;
+	
+	@Column(name="MOVIE_NAME")
 	private String movieName;
+	
+	@Column(name="START_TIME")
 	private String startTime;
+	
+	@Column
 	private String language;
+	
+	@Column
 	private int amount;
+	
+	@Column(name="SHOW_DATE")
 	private String showDate;
 	
 	@OneToMany(mappedBy="booking") 
